@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_picking_form_inherit" model="ir.ui.view">
+        <field name="name">stock.picking.form.inherit</field>
+        <field name="model">stock.picking</field>
+        <field name="inherit_id" ref="stock.view_picking_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='origin']" position="after">
+                <field name="id" invisible="1"/>
+                <field name="product_imported" invisible="1"/>
+            </xpath>
+            <xpath expr="//header" position="inside">
+                <button name="%(ahcec_import_po.ahcec_import_inventory_action)d" type="action" string="Import Receipts"
+                        attrs="{'invisible':[('product_imported','!=',False)]}" context="{'picking_id': id}"/>
+            </xpath>
+            <xpath expr="//notebook/page[@name='operations']" position="after">
+                <page string="Product Details">
+                    <field name="product_ids" widget="one2many" readonly="1">
+                        <tree string="Product Details" editable="bottom" create="false" delete="false">
+                            <field name="picking_id" invisible="1"/>
+                            <field name="brand"/>
+                            <field name="product_id"/>
+                            <field name="description"/>
+                            <field name="vin"/>
+                            <field name="exterior_color"/>
+                            <field name="interior_color"/>
+                            <field name="complete_engine_number"/>
+                            <field name="model_code"/>
+                            <field name="action"/>
+                            <field name="alj_suffix"/>
+                            <field name="model_year"/>
+                            <field name="grade"/>
+                            <field name="transmission_type"/>
+                            <field name="sales_document"/>
+                            <field name="request_delivery_date"/>
+                            <field name="billing_document"/>
+                            <field name="bill_date"/>
+                            <field name="vehicle_wholesale_price"/>
+                            <field name="broker_declaration_date"/>
+                            <field name="declaration_date"/>
+                            <field name="netval"/>
+                            <field name="vat_amount"/>
+                        </tree>
+                    </field>
+                </page>
+            </xpath>
+        </field>
+    </record>
+</odoo>

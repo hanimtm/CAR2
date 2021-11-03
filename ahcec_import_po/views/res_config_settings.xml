@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="res_config_settings_view_form" model="ir.ui.view">
+        <field name="name">res.config.settings.view.form.inherit</field>
+        <field name="model">res.config.settings</field>
+        <field name="priority" eval="95"/>
+        <field name="inherit_id" ref="purchase.res_config_settings_view_form_purchase"/>
+        <field name="arch" type="xml">
+            <xpath expr="//div[hasclass('settings')]" position="inside">
+                <div class="app_settings_block" data-string="Purchase Request" data-key="purchase"
+                     groups="purchase.group_purchase_user">
+                    <h2>Default Vendor</h2>
+                    <div class="col-12 col-lg-12 o_setting_box">
+                        <div class="o_setting_right_pane">
+                            <br/>
+                            <div>
+                                Default Vendor :
+                                <field name="default_vendor" class="oe_inline"/>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </xpath>
+        </field>
+    </record>
+</odoo>

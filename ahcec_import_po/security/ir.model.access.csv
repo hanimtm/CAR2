@@ -1,0 +1,5 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_import_po_wizard,import.po.wizard,model_import_po_wizard,ahcec_import_po.ahcec_import_po_group,1,1,1,1
+access_ahcec_message_wizard,import.message.wizard,model_import_message_wizard,ahcec_import_po.ahcec_import_po_group,1,1,1,1
+access_ahcec_inventory_wizard,import.inventory.wizard,model_import_inventory_wizard,ahcec_import_po.ahcec_import_po_group,1,1,1,1
+access_stock_receipt_line,stock.receipt.line,model_stock_receipt_line,ahcec_import_po.ahcec_import_po_group,1,1,1,1

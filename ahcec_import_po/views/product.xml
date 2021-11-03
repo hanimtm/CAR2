@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="product_template_form_view" model="ir.ui.view">
+        <field name="name">product.template.form</field>
+        <field name="model">product.template</field>
+        <field name="inherit_id" ref="product.product_template_form_view"/>
+        <field name="arch" type="xml">
+            <xpath expr="//notebook/page[@name='general_information']/group[1]" position="after">
+                <group string="Additional Vehicle Info">
+                    <group>
+                        <field name="model_year"/>
+                        <field name="grade"/>
+                        <field name="exterior_color"/>
+                        <field name="interior_color"/>
+                        <field name="transmission_type"/>
+                        <field name="vms_customer"/>
+                        <field name="alj_suffix"/>
+                        <field name="vehicle_model"/>
+                        <field name="brand"/>
+                        <field name="description"/>
+                    </group>
+                    <group>
+                        <field name="complete_engine_number"/>
+                        <field name="model_code"/>
+                        <field name="action"/>
+                        <field name="sales_document"/>
+                        <field name="request_delivery_date"/>
+                        <field name="billing_document"/>
+                        <field name="bill_date"/>
+                        <field name="vehicle_wholesale_price"/>
+                        <field name="broker_declaration_date"/>
+                        <field name="declaration_date"/>
+                        <field name="netval"/>
+                        <field name="vat_amount"/>
+                        <field name="purchase_order" readonly="1"/>
+                    </group>
+                </group>
+            </xpath>
+        </field>
+    </record>
+</odoo>
